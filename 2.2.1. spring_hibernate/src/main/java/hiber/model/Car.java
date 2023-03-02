@@ -5,12 +5,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "cars")
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "model")
     private String model;
-    @Column
+
+    @Column(name = "series")
     private int series;
 
     public Car() {
@@ -21,11 +25,11 @@ public class Car {
         this.series = series;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -44,6 +48,4 @@ public class Car {
     public void setSeries(int series) {
         this.series = series;
     }
-
-
 }
